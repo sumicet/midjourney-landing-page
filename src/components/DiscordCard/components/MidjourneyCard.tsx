@@ -24,7 +24,7 @@ export function MidjourneyCard({ children, ...rest }: HTMLMotionProps<'div'>) {
             }}
             {...rest}
         >
-            <div className="flex max-w-[350px] flex-col space-y-1">
+            <div className="flex w-full flex-col space-y-1">
                 <div className="flex items-center space-x-2">
                     <p className="text-sm font-semibold text-green-400">Midjourney Bot</p>
                     <div className="flex h-[15px] space-x-1 rounded-sm bg-[#5865f2] px-1 text-xs">
@@ -33,7 +33,7 @@ export function MidjourneyCard({ children, ...rest }: HTMLMotionProps<'div'>) {
                     </div>
                 </div>
                 <AnimatePresence mode="wait">
-                    <div className="flex flex-col space-y-3">
+                    <div className="flex w-full flex-col space-y-3">
                         {['idle', 'prompt-typed', 'color-option', 'show-options'].includes(
                             state
                         ) && (
@@ -54,11 +54,11 @@ export function MidjourneyCard({ children, ...rest }: HTMLMotionProps<'div'>) {
                                         setTimeout(() => setState('show-options'), 300);
                                         setTimeout(() => setState('color-option'), 1500);
                                     }}
+                                    className="aspect-square w-full"
                                 >
                                     <Image
                                         src={images[iteration % images.length]?.original}
-                                        width={350}
-                                        height={350}
+                                        fill
                                         className="rounded-xl object-contain outline outline-1 outline-white/[15%]"
                                         alt="cyberpunk"
                                     />
@@ -73,11 +73,11 @@ export function MidjourneyCard({ children, ...rest }: HTMLMotionProps<'div'>) {
                                     initial={{ opacity: 0, x: 20 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     onAnimationComplete={() => setState('show-reactions')}
+                                    className="aspect-square w-full"
                                 >
                                     <Image
                                         src={images[iteration % images.length]?.upscaled}
-                                        width={350}
-                                        height={350}
+                                        fill
                                         className="rounded-xl object-contain outline outline-1 outline-white/[15%]"
                                         alt="cyberpunk"
                                     />

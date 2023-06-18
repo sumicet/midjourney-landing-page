@@ -12,13 +12,13 @@ export function DiscordCard() {
 
     return (
         <Context.Provider value={value}>
-            <div className="flex flex-col space-y-5">
+            <div className="flex w-full max-w-[422px] flex-col space-y-5">
                 <Card
                     src="/discordProfileUser.webp"
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                 >
-                    <div className="flex max-w-[350px] flex-col space-y-[1px]">
+                    <div className="flex flex-col space-y-[1px]">
                         <p className="text-sm font-semibold">Marko</p>
                         <Prompt />
                     </div>

@@ -1,16 +1,17 @@
 import { HTMLMotionProps, motion } from 'framer-motion';
 import Image from 'next/image';
+import { ReactNode } from 'react';
 
 export function Card({
     children,
     className,
     src,
     ...rest
-}: HTMLMotionProps<'div'> & { src: string }) {
+}: HTMLMotionProps<'div'> & { src: string; children: ReactNode }) {
     return (
         <motion.div
             {...rest}
-            className={`${className} flex h-fit items-start space-x-4 rounded-xl px-4`}
+            className={`${className} flex h-fit w-full items-start space-x-4 rounded-xl`}
         >
             <Image
                 src={src}
