@@ -3,6 +3,7 @@
 import { useMemo, useState } from 'react';
 import { Card, MidjourneyCard, Prompt } from './components';
 import { Context, State } from './Context';
+import { Light } from '../Light';
 
 export function DiscordCard() {
     const [state, setState] = useState<State>('idle');
@@ -25,6 +26,7 @@ export function DiscordCard() {
                 </Card>
                 <MidjourneyCard />
             </div>
+            <Light />
         </Context.Provider>
     );
 }

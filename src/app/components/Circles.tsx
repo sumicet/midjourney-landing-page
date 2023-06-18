@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { ComponentPropsWithoutRef } from 'react';
 
 const variants = {
     hidden: {

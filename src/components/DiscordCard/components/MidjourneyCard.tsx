@@ -57,7 +57,7 @@ export function MidjourneyCard({ children, ...rest }: HTMLMotionProps<'div'>) {
                                     <Image
                                         src={images[iteration % images.length]?.original}
                                         fill
-                                        className="rounded-xl object-contain outline outline-1 outline-white/[15%]"
+                                        className="rounded-xl object-contain"
                                         alt="cyberpunk"
                                     />
                                 </motion.div>
@@ -76,7 +76,7 @@ export function MidjourneyCard({ children, ...rest }: HTMLMotionProps<'div'>) {
                                     <Image
                                         src={images[iteration % images.length]?.upscaled}
                                         fill
-                                        className="rounded-xl object-contain outline outline-1 outline-white/[15%]"
+                                        className="rounded-xl object-contain"
                                         alt="cyberpunk"
                                     />
                                 </motion.div>

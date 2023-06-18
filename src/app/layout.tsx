@@ -2,7 +2,7 @@ import './globals.css';
 import { Inter } from 'next/font/google';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { Icon } from '@/icons';
-import { Link } from '@/components';
+import { Light, Link } from '@/components';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -104,21 +104,27 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                         {children}
                         <footer className="flex w-full flex-col items-center space-y-20 pb-20 pt-32 lg:pt-40">
                             <div className="flex w-full flex-col items-center justify-between space-y-10 lg:flex-row lg:items-start lg:space-y-0">
-                                <p className="text-xl font-bold">Midjourney</p>
-                                <div className="grid grid-cols-2 gap-10 md:grid-cols-3 md:gap-20">
-                                    {footer.map(({ title, links }) => (
-                                        <div
-                                            key={title}
-                                            className="flex w-full flex-col items-center space-y-2 lg:items-start"
-                                        >
-                                            <p className="font-semibold">{title}</p>
-                                            {links.map(({ text, href }) => (
-                                                <Link key={text} href={href} variant="ghost">
-                                                    {text}
-                                                </Link>
-                                            ))}
-                                        </div>
-                                    ))}
+                                <div>
+                                    <p className="text-xl font-bold">Midjourney</p>
+                                    <Light variant="large" />
+                                </div>
+                                <div>
+                                    <div className="grid grid-cols-2 gap-10 md:grid-cols-3 md:gap-20">
+                                        {footer.map(({ title, links }) => (
+                                            <div
+                                                key={title}
+                                                className="flex w-full flex-col items-center space-y-2 lg:items-start"
+                                            >
+                                                <p className="font-semibold">{title}</p>
+                                                {links.map(({ text, href }) => (
+                                                    <Link key={text} href={href} variant="ghost">
+                                                        {text}
+                                                    </Link>
+                                                ))}
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <Light variant="large" />
                                 </div>
                             </div>
                             <p className="text-white/60">© 2023 Midjourney. All rights reserved.</p>

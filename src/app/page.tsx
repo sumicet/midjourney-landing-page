@@ -1,6 +1,7 @@
 import { AnimateOpacityInView, DiscordCard } from '@/components';
 import { WelcomeText } from './components';
 import Image from 'next/image';
+import { Light } from '../components/Light';
 
 export default function Home() {
     return (
@@ -15,7 +16,7 @@ export default function Home() {
                 {['github', 'tesla', 'intel', 'amd', 'nasa', 'apple'].map((sponsor) => (
                     <AnimateOpacityInView
                         key={sponsor}
-                        className="flex h-7 w-full md:h-8 lg:h-10"
+                        className="flex h-7 w-full md:h-8"
                         transition={{
                             delay: 0.4,
                         }}
