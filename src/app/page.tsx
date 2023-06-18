@@ -1,12 +1,11 @@
 import { AnimateOpacityInView, DiscordCard } from '@/components';
 import { WelcomeText } from './components';
 import Image from 'next/image';
-import { Light } from '../components/Light';
 
 export default function Home() {
     return (
         <main className="flex h-full w-full flex-col items-center space-y-20 lg:max-h-[1000px] lg:space-x-6">
-            <div className="flex flex-1 flex-col space-y-20 lg:flex-row lg:space-y-0">
+            <div className="flex flex-1 flex-col space-y-12 sm:space-y-20 lg:flex-row lg:space-y-0">
                 <WelcomeText />
                 <div className="flex w-full -translate-x-[28px] items-center justify-center lg:h-full lg:flex-1 lg:translate-x-0">
                     <DiscordCard />

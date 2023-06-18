@@ -31,6 +31,25 @@ function Circle(props: HTMLMotionProps<'div'>) {
     );
 }
 
+const circles = [
+    {
+        size: '110%',
+        duration: 2.4,
+    },
+    {
+        size: '130%',
+        duration: 2.2,
+    },
+    {
+        size: '150%',
+        duration: 2,
+    },
+    {
+        size: '170%',
+        duration: 1.8,
+    },
+];
+
 export function JoinButton() {
     const [isHover, setIsHover] = useState(false);
     return (
@@ -42,34 +61,10 @@ export function JoinButton() {
             onMouseLeave={() => setIsHover(false)}
             className="group group flex aspect-square w-fit items-center rounded-full bg-indigo-600 bg-gradient-to-tr px-4 text-sm font-semibold transition-colors duration-200 hover:bg-white hover:text-indigo-800"
         >
-            <Circle
-                custom={{
-                    size: '110%',
-                    duration: 2.4,
-                }}
-                animate={isHover ? 'hidden' : 'pulse'}
-            />
-            <Circle
-                custom={{
-                    size: '130%',
-                    duration: 2.2,
-                }}
-                animate={isHover ? 'hidden' : 'pulse'}
-            />
-            <Circle
-                custom={{
-                    size: '150%',
-                    duration: 2,
-                }}
-                animate={isHover ? 'hidden' : 'pulse'}
-            />
-            <Circle
-                custom={{
-                    size: '170%',
-                    duration: 1.8,
-                }}
-                animate={isHover ? 'hidden' : 'pulse'}
-            />
+            {circles.map((custom) => (
+                <Circle key={custom.size} custom={custom} animate={isHover ? 'hidden' : 'pulse'} />
+            ))}
+
             <p>JOIN</p>
         </motion.button>
     );

@@ -8,12 +8,12 @@ import { JoinButton } from './JoinButton';
 
 export function WelcomeText() {
     return (
-        <div className="flex flex-col items-center justify-center space-y-24 lg:h-full lg:flex-1 lg:items-center">
-            <div className="flex flex-col items-end space-y-12">
+        <div className="flex flex-col items-center justify-center space-y-12 sm:space-y-24 lg:h-full lg:flex-1 lg:items-center lg:pb-20 lg:pt-5">
+            <div className="flex flex-col items-end space-y-7 sm:space-y-12">
                 <div>
                     <AnimateOpacityInView>
                         <Balancer>
-                            <h1 className="text-center text-3xl font-bold sm:text-4xl lg:text-center lg:text-6xl">
+                            <h1 className="text-center text-3xl font-bold sm:text-5xl lg:text-center lg:text-6xl">
                                 MidJourney: Ignite Your Creative Sparks with AI
                             </h1>
                         </Balancer>
