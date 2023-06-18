@@ -12,36 +12,35 @@ export function WelcomeText() {
             <div className="flex flex-col items-end space-y-7 sm:space-y-12">
                 <div>
                     <AnimateOpacityInView>
-                        <Balancer>
-                            <h1 className="text-center text-3xl font-bold sm:text-5xl lg:text-center lg:text-6xl">
-                                MidJourney: Ignite Your Creative Sparks with AI
-                            </h1>
-                        </Balancer>
+                        <h1 className="text-center text-3xl font-bold sm:text-5xl lg:text-center lg:text-6xl">
+                            <Balancer>MidJourney: Ignite Your Creative Sparks with AI</Balancer>
+                        </h1>
                     </AnimateOpacityInView>
                 </div>
                 <AnimateOpacityInView>
-                    <Balancer>
-                        <motion.h3
-                            initial={{
-                                opacity: 0,
-                                y: -20,
-                            }}
-                            whileInView={{
-                                opacity: 1,
-                                y: 0,
-                            }}
-                            transition={{
-                                delay: 0.2,
-                            }}
-                            className="text-center text-white/90 lg:text-center"
-                        >
+                    {' '}
+                    <motion.h3
+                        initial={{
+                            opacity: 0,
+                            y: -20,
+                        }}
+                        whileInView={{
+                            opacity: 1,
+                            y: 0,
+                        }}
+                        transition={{
+                            delay: 0.2,
+                        }}
+                        className="text-center text-white/90 lg:text-center"
+                    >
+                        <Balancer>
                             MidJourney is an innovative AI-powered platform, breathing life into
                             textual prompts by converting them into captivating, high-quality
                             images. Empower your creative process with MidJourney, a tool designed
                             to imagine, inspire and illustrate, no matter if you&apos;re an artist,
                             designer, storyteller or a passionate dreamer.
-                        </motion.h3>
-                    </Balancer>
+                        </Balancer>
+                    </motion.h3>
                 </AnimateOpacityInView>
             </div>
             <div>

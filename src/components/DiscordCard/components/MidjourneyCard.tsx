@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { Card } from './Card';
 import { BsCheckLg } from 'react-icons/bs';
-import { AnimatePresence, HTMLMotionProps, LayoutGroup, motion } from 'framer-motion';
+import { AnimatePresence, HTMLMotionProps, motion } from 'framer-motion';
 import { Options } from './Options';
 import { Reaction } from './Reaction';
 import { useDiscordCard } from '../useDiscordCard';

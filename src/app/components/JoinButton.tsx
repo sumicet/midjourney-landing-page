@@ -1,6 +1,7 @@
 'use client';
 
 import { HTMLMotionProps, motion } from 'framer-motion';
+import Link from 'next/link';
 import { useState } from 'react';
 
 const variants = {
@@ -53,19 +54,25 @@ const circles = [
 export function JoinButton() {
     const [isHover, setIsHover] = useState(false);
     return (
-        <motion.button
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
-            transition={{ delay: 0.4 }}
-            onMouseEnter={() => setIsHover(true)}
-            onMouseLeave={() => setIsHover(false)}
-            className="group group flex aspect-square w-fit items-center rounded-full bg-indigo-600 bg-gradient-to-tr px-4 text-sm font-semibold transition-colors duration-200 hover:bg-white hover:text-indigo-800"
-        >
-            {circles.map((custom) => (
-                <Circle key={custom.size} custom={custom} animate={isHover ? 'hidden' : 'pulse'} />
-            ))}
+        <Link href="https://discord.com/invite/midjourney">
+            <motion.button
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                transition={{ delay: 0.4 }}
+                onMouseEnter={() => setIsHover(true)}
+                onMouseLeave={() => setIsHover(false)}
+                className="group group flex aspect-square w-fit items-center rounded-full bg-indigo-600 bg-gradient-to-tr px-4 text-sm font-semibold transition-colors duration-200 hover:bg-white hover:text-indigo-800"
+            >
+                {circles.map((custom) => (
+                    <Circle
+                        key={custom.size}
+                        custom={custom}
+                        animate={isHover ? 'hidden' : 'pulse'}
+                    />
+                ))}
 
-            <p>JOIN</p>
-        </motion.button>
+                <p>JOIN</p>
+            </motion.button>
+        </Link>
     );
 }
