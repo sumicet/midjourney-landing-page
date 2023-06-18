@@ -1,8 +1,8 @@
-import Link from 'next/link';
 import './globals.css';
 import { Inter } from 'next/font/google';
-import Image from 'next/image';
+import { AiOutlineMenu } from 'react-icons/ai';
 import { Icon } from '@/icons';
+import { Link } from '@/components';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -30,23 +30,99 @@ const links = [
     },
 ];
 
+const footer = [
+    {
+        title: 'Helpful Links',
+        links: [
+            {
+                text: 'Quick start',
+                href: 'https://docs.midjourney.com/docs/quick-start',
+            },
+            {
+                text: 'Subscription Plans',
+                href: 'https://docs.midjourney.com/docs/plans',
+            },
+            {
+                text: 'Discord Interface',
+                href: 'https://docs.midjourney.com/docs/midjourney-discord',
+            },
+            {
+                text: 'Prompts',
+                href: 'https://docs.midjourney.com/docs/prompts',
+            },
+        ],
+    },
+    {
+        title: 'Legal',
+        links: [
+            {
+                text: 'Terms of Service',
+                href: 'https://docs.midjourney.com/docs/terms-of-service',
+            },
+            {
+                text: 'Privacy Policy',
+                href: 'https://docs.midjourney.com/docs/privacy-policy',
+            },
+        ],
+    },
+    {
+        title: 'Company',
+        links: [
+            {
+                text: 'Careers',
+                href: 'mailto:careers@midjourney.com',
+            },
+            {
+                text: 'Billing Support',
+                href: 'mailto:billing@midjourney.com',
+            },
+            {
+                text: 'Journalist Inquiries',
+                href: 'mailto:press@midjourney.com',
+            },
+        ],
+    },
+];
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en">
             <body className={inter.className}>
                 <div className="flex h-full w-full justify-center px-4 sm:px-8">
-                    <div className="flex h-full w-full max-w-7xl flex-col space-y-3">
+                    <div className="flex h-full w-full max-w-7xl flex-col space-y-14">
                         <header className="flex h-16 w-full items-center justify-between">
                             <Icon type="logo" className="h-12 w-12" />
-                            <div className="flex space-x-8">
+                            <div className="hidden space-x-8 md:flex">
                                 {links.map(({ text, href }) => (
                                     <Link href={href} key={text}>
                                         <p>{text}</p>
                                     </Link>
                                 ))}
                             </div>
+                            <AiOutlineMenu className="flex md:hidden" />
                         </header>
                         {children}
+                        <footer className="flex w-full flex-col items-center space-y-20 pb-20 pt-32 lg:pt-40">
+                            <div className="flex w-full flex-col items-center justify-between space-y-10 lg:flex-row lg:items-start lg:space-y-0">
+                                <p className="text-xl font-bold">Midjourney</p>
+                                <div className="grid grid-cols-2 gap-10 md:grid-cols-3 md:gap-20">
+                                    {footer.map(({ title, links }) => (
+                                        <div
+                                            key={title}
+                                            className="flex w-full flex-col items-center space-y-2 lg:items-start"
+                                        >
+                                            <p className="font-semibold">{title}</p>
+                                            {links.map(({ text, href }) => (
+                                                <Link key={text} href={href} variant="ghost">
+                                                    {text}
+                                                </Link>
+                                            ))}
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                            <p className="text-white/60">© 2023 Midjourney. All rights reserved.</p>
+                        </footer>
                     </div>
                 </div>
             </body>

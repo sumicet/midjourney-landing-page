@@ -6,11 +6,11 @@ import { AnimateOpacityInView } from '@/components';
 
 export function WelcomeText() {
     return (
-        <div className="flex flex-col justify-center space-y-20 lg:h-full lg:flex-1">
-            <div className="flex flex-col space-y-10">
+        <div className="flex flex-col items-center justify-center space-y-20 lg:h-full lg:flex-1 lg:items-start">
+            <div className="flex flex-col items-center space-y-10">
                 <AnimateOpacityInView>
                     <Balancer>
-                        <h1 className="text-center text-6xl font-bold lg:text-left">
+                        <h1 className="text-center text-3xl font-bold sm:text-4xl lg:text-left lg:text-6xl">
                             MidJourney: Ignite Your Creative Sparks with AI
                         </h1>
                     </Balancer>

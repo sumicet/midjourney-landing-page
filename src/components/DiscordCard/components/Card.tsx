@@ -9,10 +9,7 @@ export function Card({
     ...rest
 }: HTMLMotionProps<'div'> & { src: string; children: ReactNode }) {
     return (
-        <motion.div
-            {...rest}
-            className={`${className} flex h-fit w-full items-start space-x-4 rounded-xl`}
-        >
+        <motion.div {...rest} className={`${className} flex h-fit w-full items-start space-x-4`}>
             <Image
                 src={src}
                 width={40}

@@ -12,8 +12,6 @@ const delays = [0, 0.5, 1.2, 1.5];
 export function MidjourneyCard({ children, ...rest }: HTMLMotionProps<'div'>) {
     const { state, setState, iteration } = useDiscordCard();
 
-    console.log(state, iteration, iteration % images.length);
-
     return (
         <Card
             src="/discordProfile.webp"
