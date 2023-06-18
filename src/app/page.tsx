@@ -1,6 +1,7 @@
 import { AnimateOpacityInView, DiscordCard } from '@/components';
 import { Plans, WelcomeText } from './components';
 import Image from 'next/image';
+import { Balancer } from 'react-wrap-balancer';
 
 export default function Home() {
     return (
@@ -36,7 +37,12 @@ export default function Home() {
                     delay: 0.4,
                 }}
             >
-                <Plans />
+                <div className="flex w-full flex-col space-y-12">
+                    <h1 className="text-center text-2xl font-semibold sm:text-3xl lg:text-center lg:text-4xl">
+                        <Balancer>Get Started With MidJourney</Balancer>
+                    </h1>
+                    <Plans />
+                </div>
             </AnimateOpacityInView>
         </main>
     );

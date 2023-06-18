@@ -1,5 +1,6 @@
 'use client';
 
+import { Light } from '@/components';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -59,7 +60,7 @@ function Plan({ name, price, Icon, color, details, colorHover }: (typeof plans)[
 
     return (
         <div
-            className="group flex w-full flex-col items-center justify-between space-y-6 overflow-hidden rounded-2xl bg-slate-800 p-4 lg:space-y-10 lg:p-8"
+            className="group flex w-full flex-col items-center justify-between space-y-6 overflow-hidden rounded-2xl bg-gradient-to-b from-slate-800/90 to-slate-800 p-4 lg:space-y-10 lg:p-8"
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}
         >
@@ -68,6 +69,7 @@ function Plan({ name, price, Icon, color, details, colorHover }: (typeof plans)[
                     <div className="flex items-center justify-center">
                         <div className="flex items-center justify-center rounded-full">
                             <GiAmplitude className="h-20 w-20 text-white/10 transition-colors duration-200 group-hover:z-10 group-hover:text-white lg:h-28 lg:w-28" />
+
                             <motion.div
                                 initial={false}
                                 animate={
