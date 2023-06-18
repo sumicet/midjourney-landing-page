@@ -1,4 +1,7 @@
 import { ComponentPropsWithoutRef } from 'react';
+import { useDiscordCard } from '../useDiscordCard';
+import { motion } from 'framer-motion';
+import { images } from '../images';
 
 const upscales = ['U1', 'U2', 'U3', 'U4', '🔄'];
 const variants = ['V1', 'V2', 'V3', 'V4'];
@@ -14,32 +17,39 @@ function Option({ children, className, ...rest }: ComponentPropsWithoutRef<'butt
     );
 }
 
-export function Options({
-    selectedOption,
-    setSelectedOption,
-}: {
-    selectedOption: string | null;
-    setSelectedOption: (option: string | null) => void;
-}) {
+export function Options() {
+    const { state, setState, iteration } = useDiscordCard();
+
     return (
-        <div className="flex flex-wrap space-y-2">
-            {[upscales, variants].map((array, index) => (
+        <motion.div
+            initial={false}
+            animate={
+                ['color-option', 'show-options'].includes(state)
+                    ? { opacity: 1, y: 0 }
+                    : { opacity: 0, y: -20 }
+            }
+            className="flex flex-wrap space-y-2"
+        >
+            {[upscales, variants].map((array) => (
                 <div key={array[0]} className="flex flex-wrap space-x-2">
                     {array.map((text) => (
                         <Option
                             key={text}
                             className={
-                                selectedOption === text
+                                ['color-option', 'show-upscale'].includes(state) &&
+                                text === images[iteration % images.length].upscale
                                     ? 'bg-[#5865f2]'
                                     : 'bg-white/30 hover:bg-white/40'
                             }
-                            onClick={() => setSelectedOption(text)}
+                            onTransitionEnd={() => {
+                                setTimeout(() => setState('show-upscale'), 1000);
+                            }}
                         >
                             {text}
                         </Option>
                     ))}
                 </div>
             ))}
-        </div>
+        </motion.div>
     );
 }

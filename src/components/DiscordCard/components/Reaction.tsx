@@ -1,5 +1,6 @@
 import { useCountUp } from 'use-count-up';
 import { motion } from 'framer-motion';
+import { useDiscordCard } from '../useDiscordCard';
 
 export function Reaction({ count, emoji, delay }: { count: number; emoji: string; delay: number }) {
     const { value } = useCountUp({
@@ -11,15 +12,16 @@ export function Reaction({ count, emoji, delay }: { count: number; emoji: string
         thousandsSeparator: ',',
     });
 
+    const { state } = useDiscordCard();
+
     return (
         <motion.div
-            // layout="position"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={false}
+            animate={state === 'show-reactions' ? { opacity: 1 } : { opacity: 0 }}
             transition={{
                 delay,
             }}
-            className="flex w-fit items-center space-x-1 rounded-md bg-slate-600 px-2"
+            className="flex w-fit cursor-pointer items-center space-x-1 rounded-md bg-slate-600 px-2"
         >
             <div className="h-6">{emoji}</div>
             <p className="text-sm">{value}</p>
