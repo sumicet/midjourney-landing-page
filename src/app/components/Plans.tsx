@@ -1,6 +1,6 @@
 'use client';
 
-import { Light } from '@/components';
+import { AnimateWhileInView, Light } from '@/components';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { BsCheckLg } from 'react-icons/bs';
@@ -68,7 +68,7 @@ function Plan({
 }: (typeof plans)[number]) {
     return (
         <div
-            className={`group flex w-full flex-col items-center justify-between space-y-6 overflow-hidden rounded-2xl bg-gradient-to-b from-slate-800/90 to-slate-800 p-4 shadow-sm lg:space-y-10 lg:p-8 ${shadowColor}`}
+            className={`group flex h-full w-full flex-col items-center justify-between space-y-6 overflow-hidden rounded-2xl bg-gradient-to-b from-slate-800/90 to-slate-800 p-4 shadow-sm lg:space-y-10 lg:p-8 ${shadowColor}`}
         >
             <div className="flex w-full flex-col space-y-5">
                 <div className="flex items-center space-x-2 lg:flex-col lg:space-x-0 lg:space-y-5">
@@ -108,8 +108,17 @@ function Plan({
 export function Plans() {
     return (
         <div className="grid w-full grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {plans.map(({ name, ...other }) => (
-                <Plan key={name} name={name} {...other} />
+            {plans.map(({ name, ...other }, index) => (
+                <AnimateWhileInView
+                    variant="x"
+                    key={name}
+                    transition={{
+                        delay: 0.1 * index,
+                    }}
+                    className="h-full w-full"
+                >
+                    <Plan name={name} {...other} />
+                </AnimateWhileInView>
             ))}
         </div>
     );

@@ -6,6 +6,7 @@ import { Balancer } from 'react-wrap-balancer';
 export default function Home() {
     return (
         <main className="flex w-full flex-col space-y-32">
+            
             <div className="flex h-full w-full flex-col items-center space-y-20 lg:max-h-[1000px] lg:space-x-6">
                 <div className="flex flex-1 flex-col space-y-12 sm:space-y-20 lg:flex-row lg:space-y-0">
                     <WelcomeText />
@@ -33,19 +34,20 @@ export default function Home() {
                     ))}
                 </div>
             </div>
-            <AnimateWhileInView
-                variant="y"
-                transition={{
-                    delay: 0.4,
-                }}
-            >
-                <div className="flex w-full flex-col space-y-12">
+
+            <div className="flex w-full flex-col space-y-12">
+                <AnimateWhileInView
+                    variant="y"
+                    transition={{
+                        delay: 0.4,
+                    }}
+                >
                     <h1 className="text-center text-2xl font-semibold sm:text-3xl lg:text-center lg:text-4xl">
                         <Balancer>Get Started With MidJourney</Balancer>
                     </h1>
-                    <Plans />
-                </div>
-            </AnimateWhileInView>
+                </AnimateWhileInView>
+                <Plans />
+            </div>
         </main>
     );
 }

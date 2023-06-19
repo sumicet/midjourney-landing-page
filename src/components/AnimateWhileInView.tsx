@@ -12,7 +12,7 @@ export function AnimateWhileInView({
     const initialProps =
         variant === 'x'
             ? {
-                  x: -20,
+                  x: 20,
               }
             : variant === 'y'
             ? {
