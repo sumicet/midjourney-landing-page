@@ -1,4 +1,4 @@
-import { AnimateOpacityInView, DiscordCard } from '@/components';
+import { AnimateWhileInView, DiscordCard } from '@/components';
 import { Plans, WelcomeText } from './components';
 import Image from 'next/image';
 import { Balancer } from 'react-wrap-balancer';
@@ -15,12 +15,13 @@ export default function Home() {
                 </div>
                 <div className="grid w-full grid-cols-2 gap-16 lg:grid-cols-3">
                     {['github', 'tesla', 'intel', 'amd', 'nasa', 'apple'].map((sponsor) => (
-                        <AnimateOpacityInView
+                        <AnimateWhileInView
                             key={sponsor}
                             className="flex h-7 w-full md:h-8"
                             transition={{
                                 delay: 0.4,
                             }}
+                            variant="y"
                         >
                             <Image
                                 src={`/${sponsor}.png`}
@@ -28,11 +29,12 @@ export default function Home() {
                                 alt="sponsor"
                                 className="object-contain opacity-80 invert"
                             />
-                        </AnimateOpacityInView>
+                        </AnimateWhileInView>
                     ))}
                 </div>
             </div>
-            <AnimateOpacityInView
+            <AnimateWhileInView
+                variant="y"
                 transition={{
                     delay: 0.4,
                 }}
@@ -43,7 +45,7 @@ export default function Home() {
                     </h1>
                     <Plans />
                 </div>
-            </AnimateOpacityInView>
+            </AnimateWhileInView>
         </main>
     );
 }

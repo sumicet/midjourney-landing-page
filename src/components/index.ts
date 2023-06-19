@@ -1,4 +1,4 @@
 export * from './DiscordCard';
-export * from './AnimateOpacityInView';
+export * from './AnimateWhileInView';
 export * from './Link';
 export * from './Light';

@@ -58,6 +58,9 @@ export function JoinButton() {
             <motion.button
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
+                viewport={{
+                    once: true,
+                }}
                 transition={{ delay: 0.4 }}
                 onMouseEnter={() => setIsHover(true)}
                 onMouseLeave={() => setIsHover(false)}

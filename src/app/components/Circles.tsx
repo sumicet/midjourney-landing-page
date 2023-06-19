@@ -32,14 +32,12 @@ const groupVariants = {
 
 export function Circles() {
     return (
-        <motion.svg
+        <svg
             fill="none"
             height="100%"
             width="100%"
             viewBox="0 0 1014 1014"
             xmlns="http://www.w3.org/2000/svg"
-            initial="hidden"
-            whileInView="visible"
         >
             {/* Inner circle */}
             <motion.g variants={groupVariants} custom="clockwise">
@@ -152,8 +150,8 @@ export function Circles() {
                     y1="365"
                     y2="630"
                 >
-                    <stop stop-color="white" stop-opacity="0.5"></stop>
-                    <stop offset="1" stop-color="white" stop-opacity="0"></stop>
+                    <stop stopColor="white" stopOpacity="0.5"></stop>
+                    <stop offset="1" stopColor="white" stopOpacity="0"></stop>
                 </linearGradient>
                 <linearGradient
                     gradientUnits="userSpaceOnUse"
@@ -163,8 +161,8 @@ export function Circles() {
                     y1="274"
                     y2="739"
                 >
-                    <stop stop-color="white" stop-opacity="0.5"></stop>
-                    <stop offset="1" stop-color="white" stop-opacity="0"></stop>
+                    <stop stopColor="white" stopOpacity="0.5"></stop>
+                    <stop offset="1" stopColor="white" stopOpacity="0"></stop>
                 </linearGradient>
                 <linearGradient
                     gradientUnits="userSpaceOnUse"
@@ -174,8 +172,8 @@ export function Circles() {
                     y1="128"
                     y2="847.5"
                 >
-                    <stop stop-color="white" stop-opacity="0.5"></stop>
-                    <stop offset="1" stop-color="white" stop-opacity="0"></stop>
+                    <stop stopColor="white" stopOpacity="0.5"></stop>
+                    <stop offset="1" stopColor="white" stopOpacity="0"></stop>
                 </linearGradient>
                 <linearGradient
                     gradientUnits="userSpaceOnUse"
@@ -185,10 +183,10 @@ export function Circles() {
                     y1="-2.5332e-7"
                     y2="1014"
                 >
-                    <stop stop-color="white" stop-opacity="0.5"></stop>
-                    <stop offset="1" stop-color="white" stop-opacity="0"></stop>
+                    <stop stopColor="white" stopOpacity="0.5"></stop>
+                    <stop offset="1" stopColor="white" stopOpacity="0"></stop>
                 </linearGradient>
             </defs>
-        </motion.svg>
+        </svg>
     );
 }

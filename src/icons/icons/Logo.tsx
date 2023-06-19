@@ -12,7 +12,7 @@ export function Logo(props: ComponentProps<'svg'>) {
             <g strokeWidth="2.00" fill="none" strokeLinecap="butt">
                 <path
                     stroke="none"
-                    vector-effect="non-scaling-stroke"
+                    vectorEffect="non-scaling-stroke"
                     d="
     M 334.60 296.43
     C 298.08 224.30 238.02 166.91 165.15 132.21
@@ -30,7 +30,7 @@ export function Logo(props: ComponentProps<'svg'>) {
                 />
                 <path
                     stroke="none"
-                    vector-effect="non-scaling-stroke"
+                    vectorEffect="non-scaling-stroke"
                     d="
     M 383.42 372.05
     C 385.48 373.26 387.34 373.23 389.85 372.66
@@ -47,7 +47,7 @@ export function Logo(props: ComponentProps<'svg'>) {
                 />
                 <path
                     stroke="none"
-                    vector-effect="non-scaling-stroke"
+                    vectorEffect="non-scaling-stroke"
                     d="
     M 387.79 455.82
     Q 387.11 455.42 387.82 455.09
@@ -81,7 +81,7 @@ export function Logo(props: ComponentProps<'svg'>) {
                 />
                 <path
                     stroke="none"
-                    vector-effect="non-scaling-stroke"
+                    vectorEffect="non-scaling-stroke"
                     d="
     M 347.74 366.35
     C 326.49 271.88 255.01 191.68 170.72 147.52
@@ -95,7 +95,7 @@ export function Logo(props: ComponentProps<'svg'>) {
                 />
                 <path
                     stroke="none"
-                    vector-effect="non-scaling-stroke"
+                    vectorEffect="non-scaling-stroke"
                     d="
     M 391.41 360.68
     C 402.94 358.59 413.96 359.55 424.69 364.13
@@ -112,7 +112,7 @@ export function Logo(props: ComponentProps<'svg'>) {
                 />
                 <path
                     stroke="none"
-                    vector-effect="non-scaling-stroke"
+                    vectorEffect="non-scaling-stroke"
                     d="
     M 252.95 435.62
     C 265.46 436.23 273.65 444.40 285.25 453.74

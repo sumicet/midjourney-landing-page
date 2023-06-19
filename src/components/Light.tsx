@@ -1,6 +1,7 @@
 'use client';
 
 import { HTMLMotionProps, motion } from 'framer-motion';
+import { AnimateWhileInView } from './AnimateWhileInView';
 
 export function Light({
     variant = 'medium',
@@ -8,10 +9,8 @@ export function Light({
     ...rest
 }: { variant?: 'large' | 'medium' | 'small' } & HTMLMotionProps<'div'>) {
     return (
-        <motion.div
+        <AnimateWhileInView
             {...rest}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
             className={`absolute left-1/2 top-1/2 -z-10 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center ${
                 variant === 'small' ? 'h-[200px] w-[200px]' : 'h-[500px] w-[500px]'
             } ${className}`}
@@ -25,6 +24,6 @@ export function Light({
                         : 'blur-[70px]'
                 }`}
             />
-        </motion.div>
+        </AnimateWhileInView>
     );
 }
