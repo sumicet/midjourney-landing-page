@@ -1,17 +1,28 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { HTMLMotionProps, motion } from 'framer-motion';
 
-export function Light({ variant = 'medium' }: { variant?: 'large' | 'medium' }) {
+export function Light({
+    variant = 'medium',
+    className,
+    ...rest
+}: { variant?: 'large' | 'medium' | 'small' } & HTMLMotionProps<'div'>) {
     return (
         <motion.div
+            {...rest}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="absolute left-1/2 top-1/2 -z-10 flex h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 items-center justify-center"
+            className={`absolute left-1/2 top-1/2 -z-10 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center ${
+                variant === 'small' ? 'h-[200px] w-[200px]' : 'h-[500px] w-[500px]'
+            } ${className}`}
         >
             <div
                 className={`h-full w-full bg-indigo-700/20 ${
-                    variant === 'large' ? 'blur-[200px]' : 'blur-[150px]'
+                    variant === 'large'
+                        ? 'blur-[200px]'
+                        : variant === 'medium'
+                        ? 'blur-[150px]'
+                        : 'blur-[70px]'
                 }`}
             />
         </motion.div>

@@ -81,6 +81,7 @@ function Plan({ name, price, Icon, color, details, colorHover }: (typeof plans)[
                             >
                                 <Icon className={`flex h-full w-full ${color}`} />
                             </motion.div>
+                            <Light className="z-0" variant="small" />
                         </div>
                     </div>
                     <h3 className={`text-lg font-semibold lg:text-2xl ${color}`}>{name}</h3>
