@@ -32,12 +32,14 @@ const groupVariants = {
 
 export function Circles() {
     return (
-        <svg
+        <motion.svg
             fill="none"
             height="100%"
             width="100%"
             viewBox="0 0 1014 1014"
             xmlns="http://www.w3.org/2000/svg"
+            animate="visible"
+            initial="hidden"
         >
             {/* Inner circle */}
             <motion.g variants={groupVariants} custom="clockwise">
@@ -187,6 +189,6 @@ export function Circles() {
                     <stop offset="1" stopColor="white" stopOpacity="0"></stop>
                 </linearGradient>
             </defs>
-        </svg>
+        </motion.svg>
     );
 }
