@@ -43,11 +43,14 @@ const cards = [
 export function Cards() {
     return (
         <div className="grid w-full grid-cols-1 gap-20 lg:grid-cols-2">
-            {cards.map(({ title, description }) => (
+            {cards.map(({ title, description }, index) => (
                 <AnimateWhileInView
                     variant="x"
                     key={title}
                     className="flex h-full flex-col space-y-12 text-center lg:text-start"
+                    transition={{
+                        delay: index * 0.2,
+                    }}
                 >
                     <p className="text-xl font-semibold lg:text-2xl">{title}</p>
                     {description.map((desc, index) => (
