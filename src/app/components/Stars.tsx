@@ -16,7 +16,13 @@ export function Stars() {
 
     return (
         <motion.div
-            className="fixed left-1/2 h-[1400px] w-[1400px] -translate-x-1/2 opacity-50"
+            initial={{
+                opacity: 0,
+            }}
+            animate={{
+                opacity: 0.5,
+            }}
+            className="fixed left-1/2 h-[1400px] w-[1400px] -translate-x-1/2"
             style={{
                 top: smoothTop,
             }}

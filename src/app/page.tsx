@@ -1,18 +1,6 @@
 import { AnimateWhileInView, DiscordCard } from '@/components';
-import { Cards, Plans, WelcomeText } from './components';
+import { WelcomeText } from './components';
 import Image from 'next/image';
-import { Balancer } from 'react-wrap-balancer';
-
-const sections = [
-    {
-        Component: Cards,
-        title: 'Midjourney Versions',
-    },
-    {
-        Component: Plans,
-        title: 'Get Started With MidJourney',
-    },
-];
 
 export default function Home() {
     return (
@@ -44,22 +32,6 @@ export default function Home() {
                     ))}
                 </div>
             </div>
-
-            {sections.map(({ Component, title }) => (
-                <div key={title} className="flex w-full flex-col space-y-12">
-                    <AnimateWhileInView
-                        variant="y"
-                        transition={{
-                            delay: 0.4,
-                        }}
-                    >
-                        <h1 className="text-center text-2xl font-semibold sm:text-3xl lg:text-center lg:text-4xl">
-                            <Balancer>{title}</Balancer>
-                        </h1>
-                    </AnimateWhileInView>
-                    <Component />
-                </div>
-            ))}
         </main>
     );
 }

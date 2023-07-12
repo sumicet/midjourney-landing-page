@@ -51,7 +51,7 @@ export function Circles() {
                     stroke-width="1.5"
                     custom={0}
                     variants={variants}
-                ></motion.circle>
+                />
                 <motion.circle
                     cx="408.5"
                     cy="407.5"
@@ -61,7 +61,7 @@ export function Circles() {
                     stroke="#9ca3af"
                     custom={1}
                     variants={variants}
-                ></motion.circle>
+                />
             </motion.g>
 
             <motion.g variants={groupVariants}>
@@ -73,7 +73,7 @@ export function Circles() {
                     stroke-width="1.5"
                     custom={1}
                     variants={variants}
-                ></motion.circle>
+                />
                 <motion.circle
                     cx="659.5"
                     cy="332.5"
@@ -81,7 +81,7 @@ export function Circles() {
                     className="fill-purple-900"
                     custom={2}
                     variants={variants}
-                ></motion.circle>
+                />
             </motion.g>
 
             <motion.g variants={groupVariants} custom="clockwise">
@@ -93,7 +93,7 @@ export function Circles() {
                     stroke-width="1.5"
                     custom={2}
                     variants={variants}
-                ></motion.circle>
+                />
                 <motion.circle
                     cx="285.5"
                     cy="200.5"
@@ -102,7 +102,7 @@ export function Circles() {
                     stroke-width="1.5"
                     custom={3}
                     variants={variants}
-                ></motion.circle>
+                />
                 <motion.circle
                     cx="129.5"
                     cy="526.5"
@@ -112,7 +112,7 @@ export function Circles() {
                     stroke="#9ca3af"
                     custom={3}
                     variants={variants}
-                ></motion.circle>
+                />
                 <motion.circle
                     cx="882.5"
                     cy="549.5"
@@ -120,7 +120,7 @@ export function Circles() {
                     className="fill-pink-900"
                     custom={3}
                     variants={variants}
-                ></motion.circle>
+                />
                 <motion.circle
                     cx="670.5"
                     cy="165.5"
@@ -130,7 +130,7 @@ export function Circles() {
                     stroke="#9ca3af"
                     custom={3}
                     variants={variants}
-                ></motion.circle>
+                />
             </motion.g>
 
             <motion.circle
@@ -141,7 +141,7 @@ export function Circles() {
                 stroke-width="1.5"
                 custom={4}
                 variants={variants}
-            ></motion.circle>
+            />
 
             <defs>
                 <linearGradient
@@ -152,8 +152,8 @@ export function Circles() {
                     y1="365"
                     y2="630"
                 >
-                    <stop stopColor="white" stopOpacity="0.5"></stop>
-                    <stop offset="1" stopColor="white" stopOpacity="0"></stop>
+                    <stop stopColor="white" stopOpacity="0.5" />
+                    <stop offset="1" stopColor="white" stopOpacity="0" />
                 </linearGradient>
                 <linearGradient
                     gradientUnits="userSpaceOnUse"
@@ -163,8 +163,8 @@ export function Circles() {
                     y1="274"
                     y2="739"
                 >
-                    <stop stopColor="white" stopOpacity="0.5"></stop>
-                    <stop offset="1" stopColor="white" stopOpacity="0"></stop>
+                    <stop stopColor="white" stopOpacity="0.5" />
+                    <stop offset="1" stopColor="white" stopOpacity="0" />
                 </linearGradient>
                 <linearGradient
                     gradientUnits="userSpaceOnUse"
@@ -174,8 +174,8 @@ export function Circles() {
                     y1="128"
                     y2="847.5"
                 >
-                    <stop stopColor="white" stopOpacity="0.5"></stop>
-                    <stop offset="1" stopColor="white" stopOpacity="0"></stop>
+                    <stop stopColor="white" stopOpacity="0.5" />
+                    <stop offset="1" stopColor="white" stopOpacity="0" />
                 </linearGradient>
                 <linearGradient
                     gradientUnits="userSpaceOnUse"
@@ -185,8 +185,8 @@ export function Circles() {
                     y1="-2.5332e-7"
                     y2="1014"
                 >
-                    <stop stopColor="white" stopOpacity="0.5"></stop>
-                    <stop offset="1" stopColor="white" stopOpacity="0"></stop>
+                    <stop stopColor="white" stopOpacity="0.5" />
+                    <stop offset="1" stopColor="white" stopOpacity="0" />
                 </linearGradient>
             </defs>
         </motion.svg>
