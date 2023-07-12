@@ -106,10 +106,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                         {children}
                         <footer className="flex w-full flex-col items-center space-y-20 pb-20 pt-32 lg:pt-40">
                             <div className="flex w-full flex-col items-center justify-between space-y-10 lg:flex-row lg:items-start lg:space-y-0">
-                                <div>
+                                <AnimateWhileInView>
                                     <p className="text-xl font-bold">Midjourney</p>
                                     <Light variant="large" />
-                                </div>
+                                </AnimateWhileInView>
                                 <div>
                                     <div className="grid grid-cols-2 gap-10 md:grid-cols-3 md:gap-20">
                                         {footer.map(({ title, links }) => (
